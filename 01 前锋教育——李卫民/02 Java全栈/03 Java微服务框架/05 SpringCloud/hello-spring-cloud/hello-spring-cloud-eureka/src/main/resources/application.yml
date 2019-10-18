@@ -1,0 +1,16 @@
+# 当前微服务的名称
+spring:
+  application:
+    name: hello-spring-cloud-eureka
+
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+#    如果当前的eureka服务是服务端的话，需要将下面两个属性的值改为false
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
