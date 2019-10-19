@@ -28,7 +28,7 @@
 
         <!-- Spring Settings：SpringCloud的版本号 -->
         <!--<spring-cloud.version>Finchley.Release</spring-cloud.version>-->
-        <spring-cloud.version>2.0.4.RELEASE</spring-cloud.version>
+        <spring-cloud.version>2.1.3.RELEASE</spring-cloud.version>
     </properties>
 
 
