@@ -6,15 +6,32 @@
 
     <groupId>com.chen</groupId>
     <artifactId>my-shop</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>my-shop-dependencies</module>
+        <module>my-shop-commons</module>
+        <module>my-shop-domain</module>
+        <module>my-shop-web-admin</module>
+        <module>my-shop-web-ui</module>
+        <module>my-shop-web-api</module>
+    </modules>
 
+
+    <properties>
+        <servlet-api.version>3.1.0</servlet-api.version>
+        <spring.version>5.1.8.RELEASE</spring.version>
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.26</slf4j.version>
+    </properties>
 
     <dependencies>
-        <dependency>
+        <!--<editor-fold desc="Servlet 相关的依赖">-->
+       <!-- <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <version>3.1.0</version>
-        </dependency>
+            <version>${servlet-api.version}</version>
+        </dependency>-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
@@ -24,9 +41,15 @@
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
-            <!--<scope>provided</scope>-->
         </dependency>
-        <!--  lombok插件  -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet-api.version}</version>
+        </dependency>
+        <!--</editor-fold>-->
+
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -34,31 +57,47 @@
         </dependency>
 
 
-        <!--  Spring Begin  -->
+        <!--<editor-fold desc="Spring 依赖">-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.1.8.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>5.1.8.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
-        <!--  Spring End  -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--</editor-fold>-->
 
+        <!--<editor-fold desc="Log4J 依赖">-->
         <!--  Log4J Begin  -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <version>${log4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
-        <!--  Log4J End  -->
+        <!--</editor-fold>-->
+
+        <!--<editor-fold desc="commons-lang3依赖">-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+        </dependency>
+        <!--</editor-fold>-->
+
+
     </dependencies>
 
 </project>
