@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: hello-spring-cloud-zuul
+
+server:
+  port: 8769
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes: # zuul.routes这个节点是必须的
+    api-a:  # 这个节点时自定义的
+      path: /api/a/**  # 映射到哪个路径
+      serviceId: hello-spring-cloud-web-admin-ribbon  # 对哪个微服务的路径惊醒映射
+    api-b:
+      path: /api/b/**
+      serviceId: hello-spring-cloud-web-admin-feign
