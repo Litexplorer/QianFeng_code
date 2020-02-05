@@ -7,6 +7,6 @@ package com.chen.my.shop.commons.utils;
  * @Modified By:
  */
 public class ConstantUtils {
-
+    public static final String SERVER_NAME = "my_shop";
     public static final String SESSION_USER = "user";
 }

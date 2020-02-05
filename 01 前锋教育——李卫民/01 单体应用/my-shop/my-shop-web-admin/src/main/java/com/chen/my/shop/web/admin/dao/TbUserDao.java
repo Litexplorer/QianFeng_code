@@ -20,4 +20,11 @@ public interface TbUserDao {
      * @return
      */
     List<TbUser> selectAll();
+
+    /**
+     * 根据 email 找到一个用户对象
+     * @param email
+     * @return
+     */
+    TbUser getByEmail(String email);
 }
