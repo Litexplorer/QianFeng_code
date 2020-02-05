@@ -31,10 +31,42 @@
         <servlet-api.version>3.1.0</servlet-api.version>
         <slf4j.version>1.7.25</slf4j.version>
         <spring.version>5.1.9.RELEASE</spring.version>
+        <alibaba-druid.version>1.1.6</alibaba-druid.version>
+        <mysql.version>8.0.11</mysql.version>
+        <mybatis.version>3.5.0</mybatis.version>
+        <mybatis-spring.version>2.0.0</mybatis-spring.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- Database Begin -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${alibaba-druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!-- Database End -->
+
             <!-- Spring Begin -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -61,6 +93,19 @@
                 <version>${jstl.version}</version>
             </dependency>
             <!-- Servlet End -->
+
+            <!-- 测试 Begin -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!-- 测试 End -->
 
             <dependency>
                 <groupId>org.projectlombok</groupId>

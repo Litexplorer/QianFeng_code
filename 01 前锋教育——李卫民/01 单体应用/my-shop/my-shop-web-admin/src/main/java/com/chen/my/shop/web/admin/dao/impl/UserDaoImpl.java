@@ -1,26 +1,22 @@
 package com.chen.my.shop.web.admin.dao.impl;
 
-import com.chen.my.shop.domain.User;
+import com.chen.my.shop.domain.TbUser;
 import com.chen.my.shop.web.admin.dao.UserDao;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Author: ChromeChen
  * @Description:
- * @Date: Created in 21:27 2019-10-23
+ * @Date: Created in 9:48 2020/2/5 0005
  * @Modified By:
  */
-@Repository("userDao")
+@Service
 public class UserDaoImpl implements UserDao {
     @Override
-    public User getUserByEmailAndPassword(String email, String password) {
-        User user = null;
+    public List<TbUser> selectAll() {
 
-        if("chen@163.com".equals(email)) {
-            if ("123456".equals(password)) {
-                user = new User().setEmail(email).setUsername("chen");
-            }
-        }
-        return user;
+        return null;
     }
 }
