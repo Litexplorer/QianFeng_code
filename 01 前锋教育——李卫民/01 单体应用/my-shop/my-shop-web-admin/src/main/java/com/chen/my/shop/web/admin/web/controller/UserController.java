@@ -1,10 +1,14 @@
 package com.chen.my.shop.web.admin.web.controller;
 
+import com.chen.my.shop.domain.TbUser;
 import com.chen.my.shop.web.admin.service.TbUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 /**
  * @Author: ChromeChen
@@ -20,8 +24,9 @@ public class UserController {
     private TbUserService tbUserService;
 
     @RequestMapping(value = "/list", method = {RequestMethod.GET})
-    public String list(){
-
+    public String list(Model model){
+        List<TbUser> all = tbUserService.findAll();
+        model.addAttribute("users", all);
         return "user_list";
     }
 }

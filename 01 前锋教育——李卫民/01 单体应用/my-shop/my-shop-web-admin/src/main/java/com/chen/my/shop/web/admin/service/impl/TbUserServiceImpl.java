@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import java.util.List;
+
 /**
  * @Author: ChromeChen
  * @Description:
@@ -29,5 +31,10 @@ public class TbUserServiceImpl implements TbUserService {
             }
         }
         return null;
+    }
+
+    @Override
+    public List<TbUser> findAll() {
+        return tbUserDao.selectAll();
     }
 }

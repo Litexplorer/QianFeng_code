@@ -2,6 +2,8 @@ package com.chen.my.shop.web.admin.service;
 
 import com.chen.my.shop.domain.TbUser;
 
+import java.util.List;
+
 /**
  * @Author: ChromeChen
  * @Description:
@@ -11,4 +13,10 @@ import com.chen.my.shop.domain.TbUser;
 public interface TbUserService {
 
     TbUser login(String email, String password);
+
+    /**
+     * 查找所有的用户
+     * @return
+     */
+    List<TbUser> findAll();
 }
