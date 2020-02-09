@@ -26,4 +26,8 @@
         WHERE
             a.email = #{email}
     </select>
+
+    <insert id="insert">
+
+    </insert>
 </mapper>

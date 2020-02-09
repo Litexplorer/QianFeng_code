@@ -29,3 +29,11 @@
 <script src="<%=basePath%>/static/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<%=basePath%>/static/assets/dist/js/adminlte.min.js"></script>
+
+<%-- JQuery Validation 1.14.0 --%>
+<script src="<%=basePath%>/static/assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="<%=basePath%>/static/assets/plugins/jquery-validation/additional-methods.min.js"></script>
+<script src="<%=basePath%>/static/assets/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+
+<%-- 自己定义的 --%>
+<script src="<%=basePath%>/static/assets/app/validate.js"></script>

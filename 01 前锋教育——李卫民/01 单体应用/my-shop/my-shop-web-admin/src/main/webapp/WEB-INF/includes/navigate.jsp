@@ -39,7 +39,7 @@
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<%=basePath%>static/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="<%=basePath%>/static/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                             <p>
                                 ${user.username} - Java 开发工程师

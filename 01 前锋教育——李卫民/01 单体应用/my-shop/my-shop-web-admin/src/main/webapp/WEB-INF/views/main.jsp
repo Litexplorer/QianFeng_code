@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>我的商城 | 控制面板</title>
@@ -36,7 +36,7 @@
 
         <!-- Main content -->
         <section class="content">
-
+        <%--  在这里填写你的前端代码  --%>
         </section>
     </div>
     <jsp:include page="../includes/copyright.jsp"/>
