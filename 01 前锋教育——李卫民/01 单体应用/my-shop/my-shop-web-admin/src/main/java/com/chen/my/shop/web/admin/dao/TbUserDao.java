@@ -27,4 +27,16 @@ public interface TbUserDao {
      * @return
      */
     TbUser getByEmail(String email);
+
+    /**
+     * 新增一个用户
+     * @param tbUser
+     */
+    void insert(TbUser tbUser);
+
+    /**
+     * 根据 id 更新用户字段
+     * @param tbUser
+     */
+    void update(TbUser tbUser);
 }

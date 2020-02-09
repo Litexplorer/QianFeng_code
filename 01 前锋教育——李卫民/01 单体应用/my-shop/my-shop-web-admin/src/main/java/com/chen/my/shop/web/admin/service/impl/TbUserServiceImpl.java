@@ -1,5 +1,6 @@
 package com.chen.my.shop.web.admin.service.impl;
 
+import com.chen.my.shop.commons.dto.BaseResult;
 import com.chen.my.shop.domain.TbUser;
 import com.chen.my.shop.web.admin.dao.TbUserDao;
 import com.chen.my.shop.web.admin.service.TbUserService;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,4 +39,23 @@ public class TbUserServiceImpl implements TbUserService {
     public List<TbUser> findAll() {
         return tbUserDao.selectAll();
     }
+
+    @Override
+    public BaseResult save(TbUser tbUser) {
+
+        BaseResult baseResult = BaseResult.success();
+
+        tbUser.setUpdated(new Date());
+
+        if (tbUser.getId() == null) {
+            tbUser.setCreated(new Date());
+            tbUserDao.insert(tbUser);
+        }
+        else {
+            tbUserDao.update(tbUser);
+        }
+
+        return baseResult;
+    }
+
 }

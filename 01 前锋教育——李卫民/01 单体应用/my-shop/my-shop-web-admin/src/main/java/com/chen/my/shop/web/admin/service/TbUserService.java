@@ -1,5 +1,6 @@
 package com.chen.my.shop.web.admin.service;
 
+import com.chen.my.shop.commons.dto.BaseResult;
 import com.chen.my.shop.domain.TbUser;
 
 import java.util.List;
@@ -19,4 +20,11 @@ public interface TbUserService {
      * @return
      */
     List<TbUser> findAll();
+
+    /**
+     * 保存用户（新增或者更新）
+     * @param tbUser
+     * @return
+     */
+    BaseResult save(TbUser tbUser);
 }

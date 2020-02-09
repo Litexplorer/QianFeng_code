@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -37,8 +38,10 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/form", method = {RequestMethod.GET})
-    public String form() {
-        return "form";
+    public String form(Model model) {
+        TbUser tbUser = new TbUser();
+        model.addAttribute("tbUser", tbUser);
+        return "user_form";
     }
 
 
@@ -49,11 +52,11 @@ public class UserController {
      */
     @RequestMapping(value = "/save", method = {RequestMethod.POST})
     @ResponseBody
-    public BaseResult save(TbUser tbUser) {
-        BaseResult result = BaseResult.success();
+    public String save(TbUser tbUser, RedirectAttributes attributes) {
+        BaseResult baseResult = tbUserService.save(tbUser);
 
-        result.setMessage("现在就不进行校验了");
-        System.out.println(result.getMessage());
-        return result;
+        attributes.addFlashAttribute("baseResult", baseResult);
+        return "redirect:/user/list";
     }
+
 }

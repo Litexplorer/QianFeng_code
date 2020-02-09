@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -30,7 +31,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                新增用户
+                ${tbUser.id == null ? "新增" : "编辑"}用户
                 <small></small>
             </h1>
             <ol class="breadcrumb">
@@ -50,7 +51,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control require" id="inputEmail3" name="email" placeholder="请输入您的邮箱地址">
+                                <input type="email" class="form-control require" id="inputEmail3" name="email" placeholder="请输入您的邮箱地址" />
                             </div>
                         </div>
 
@@ -64,7 +65,7 @@
                         <div class="form-group">
                             <label for="inputPhone3" class="col-sm-2 control-label">电话号码</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control require" id="inputPhone3" name="phone" placeholder="请输入您的电话号码">
+                                <input type="text" class="form-control require" id="inputPhone3" name="phone" placeholder="请输入您的电话号码"/>
                             </div>
                         </div>
 
@@ -72,13 +73,13 @@
                             <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
 
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="请输入密码" >
+                                <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="请输入密码" />
                             </div>
                         </div>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="button" class="btn btn-default">返回</button>
+                        <button type="button" class="btn btn-default" onclick="history.go(-1);">返回</button>
                         <button type="submit" class="btn btn-default">提交</button>
                     </div>
                     <!-- /.box-footer -->
