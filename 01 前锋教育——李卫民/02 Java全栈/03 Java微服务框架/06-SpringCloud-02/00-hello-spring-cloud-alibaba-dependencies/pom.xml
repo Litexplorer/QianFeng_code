@@ -12,20 +12,11 @@
     <artifactId>00-hello-spring-cloud-alibaba-dependencies</artifactId>
     <packaging>pom</packaging>
 
-    <licenses>
-        <license>
-            <name>Apache 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <id>liwemin</id>
-            <name>Lusifer Lee</name>
-            <email>lee.lusifer@gmail.com</email>
-        </developer>
-    </developers>
+    <properties>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <spring-cloud-alibaba.verion>2.1.0.RELEASE</spring-cloud-alibaba.verion>
+        <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -43,44 +34,51 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
-    <repositories>
-        <repository>
-            <id>spring-milestone</id>
-            <name>Spring Milestone</name>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>spring-snapshot</id>
-            <name>Spring Snapshot</name>
-            <url>https://repo.spring.io/snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+    <!--    <repository>-->
+    <!--        <id>spring-milestone</id>-->
+    <!--        <name>Spring Milestone</name>-->
+    <!--        <url>https://repo.spring.io/milestone</url>-->
+    <!--        <snapshots>-->
+    <!--            <enabled>false</enabled>-->
+    <!--        </snapshots>-->
+    <!--    </repository>-->
+    <!--    <repository>-->
+    <!--        <id>spring-snapshot</id>-->
+    <!--        <name>Spring Snapshot</name>-->
+    <!--        <url>https://repo.spring.io/snapshot</url>-->
+    <!--        <snapshots>-->
+    <!--            <enabled>true</enabled>-->
+    <!--        </snapshots>-->
+    <!--    </repository>-->
+    <!--</repositories>-->
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-milestone</id>
-            <name>Spring Milestone</name>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>spring-snapshot</id>
-            <name>Spring Snapshot</name>
-            <url>https://repo.spring.io/snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
+    <!--<pluginRepositories>-->
+    <!--    <pluginRepository>-->
+    <!--        <id>spring-milestone</id>-->
+    <!--        <name>Spring Milestone</name>-->
+    <!--        <url>https://repo.spring.io/milestone</url>-->
+    <!--        <snapshots>-->
+    <!--            <enabled>false</enabled>-->
+    <!--        </snapshots>-->
+    <!--    </pluginRepository>-->
+    <!--    <pluginRepository>-->
+    <!--        <id>spring-snapshot</id>-->
+    <!--        <name>Spring Snapshot</name>-->
+    <!--        <url>https://repo.spring.io/snapshot</url>-->
+    <!--        <snapshots>-->
+    <!--            <enabled>true</enabled>-->
+    <!--        </snapshots>-->
+    <!--    </pluginRepository>-->
+    <!--</pluginRepositories>-->
 </project>
