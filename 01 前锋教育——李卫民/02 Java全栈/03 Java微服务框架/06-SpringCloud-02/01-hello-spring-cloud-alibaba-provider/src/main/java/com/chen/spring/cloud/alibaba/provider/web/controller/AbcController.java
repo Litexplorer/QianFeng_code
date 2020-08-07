@@ -1,9 +1,10 @@
 package com.chen.spring.cloud.alibaba.provider.web.controller;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @Author: ChromeChen
@@ -14,9 +15,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AbcController {
 
+    @Value("${server.port}")
+    private String port;
+
     @RequestMapping(value = "/echo/{string}", method = {RequestMethod.GET})
     public String echo(@PathVariable String string) {
 
         return "This is Provider message : " + string;
+    }
+
+    @GetMapping("/echo/lb")
+    public String lb(HttpServletRequest request, HttpServletResponse response ) {
+
+        return "当前的服务的端口是：" + port;
     }
 }

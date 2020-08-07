@@ -7,6 +7,7 @@ spring:
         server-addr: 192.168.150.129:8848
 
 server:
-  port: 8070
+#  port: 8070
+  port: 8071
 
 

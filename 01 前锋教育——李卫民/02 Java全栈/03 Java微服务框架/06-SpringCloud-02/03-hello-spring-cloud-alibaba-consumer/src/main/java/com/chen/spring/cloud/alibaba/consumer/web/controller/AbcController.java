@@ -1,11 +1,12 @@
 package com.chen.spring.cloud.alibaba.consumer.web.controller;
 
+import com.chen.spring.cloud.alibaba.consumer.service.EchoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @Author: ChromeChen
@@ -19,6 +20,9 @@ public class AbcController {
     private final RestTemplate restTemplate;
 
     @Autowired
+    private EchoService echoService;
+
+    @Autowired
     public AbcController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
@@ -26,6 +30,13 @@ public class AbcController {
     @RequestMapping(value = "/echo/{str}", method = {RequestMethod.GET})
     public String echo(@PathVariable String str) {
         // 使用服务名请求服务提供者
-        return restTemplate.getForObject("http://service-provider/echo/" + str + "从『服务消费者』转到『服务提供者』……", String.class);
+        String echo = echoService.echo(str);
+        return "从『消费者』返回的消息为： " + echo;
+    }
+
+    @GetMapping("/echo/lb")
+    public String lb(HttpServletRequest request, HttpServletResponse response ) {
+
+        return "从服务提供者返回的消息为：" + echoService.lb();
     }
 }
