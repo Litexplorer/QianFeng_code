@@ -2,6 +2,8 @@ package com.chen.spring.cloud.alibaba.consumer.web.controller;
 
 import com.chen.spring.cloud.alibaba.consumer.service.EchoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @Modified By:
  */
 @RestController
+@RefreshScope
 public class AbcController {
 
     private final RestTemplate restTemplate;
@@ -39,4 +42,15 @@ public class AbcController {
 
         return "从服务提供者返回的消息为：" + echoService.lb();
     }
+
+    @Value("${user.name}")
+    private String username;
+
+    @GetMapping("/echo/config")
+    public String config(HttpServletRequest request, HttpServletResponse response ) {
+
+        return String.format("配置文件中的值为：【%s】", username);
+    }
+
+
 }
