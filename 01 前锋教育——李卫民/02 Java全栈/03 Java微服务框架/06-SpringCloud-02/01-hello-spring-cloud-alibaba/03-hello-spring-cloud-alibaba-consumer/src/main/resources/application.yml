@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: service-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.150.129:8848
+      config:
+        server-addr: 192.168.150.129:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8888
+
+server:
+  # 服务端口
+  port: 8080
+
+management:
+  # 端点检查（健康检查）
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  # 开启 Feign 对 Sentinel 的支持
+feign:
+  sentinel:
+    enabled: true
