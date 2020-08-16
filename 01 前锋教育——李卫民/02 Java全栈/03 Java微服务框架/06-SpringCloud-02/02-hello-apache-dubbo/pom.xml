@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.funtl</groupId>
+    <groupId>com.chen</groupId>
     <artifactId>hello-apache-dubbo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -48,7 +48,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.funtl</groupId>
+                <groupId>com.chen</groupId>
                 <artifactId>hello-apache-dubbo-dependencies</artifactId>
                 <version>${project.version}</version>
                 <type>pom</type>
