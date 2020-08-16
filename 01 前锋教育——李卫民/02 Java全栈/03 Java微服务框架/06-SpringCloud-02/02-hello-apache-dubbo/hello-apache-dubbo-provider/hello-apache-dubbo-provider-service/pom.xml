@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.funtl</groupId>
+        <groupId>com.chen</groupId>
         <artifactId>hello-apache-dubbo-provider</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -65,7 +65,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.funtl</groupId>
+            <groupId>com.chen</groupId>
             <artifactId>hello-apache-dubbo-provider-api</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
