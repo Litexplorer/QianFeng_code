@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>hello-apache-dubbo-dependencies</artifactId>
-        <groupId>com.chen</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.funtl</groupId>
+        <artifactId>hello-apache-dubbo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
     <artifactId>hello-apache-dubbo-consumer</artifactId>
+    <packaging>jar</packaging>
+    <url>http://www.funtl.com</url>
+    <inceptionYear>2018-Now</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>liwemin</id>
+            <name>Lusifer Lee</name>
+            <email>lee.lusifer@gmail.com</email>
+        </developer>
+    </developers>
 
     <dependencies>
 
@@ -43,7 +61,6 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
-            <version>2.7.7</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
@@ -56,9 +73,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.chen</groupId>
+            <groupId>com.funtl</groupId>
             <artifactId>hello-apache-dubbo-provider-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
     </dependencies>
@@ -69,10 +86,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.funtl.apache.dubbo.consumer.ConsumerApplication</mainClass>
+                    <mainClass>com.chen.apache.dubbo.consumer.ConsumerApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
