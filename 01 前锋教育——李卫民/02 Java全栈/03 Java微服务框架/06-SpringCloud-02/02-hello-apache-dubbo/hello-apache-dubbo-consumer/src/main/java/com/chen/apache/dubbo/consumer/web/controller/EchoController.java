@@ -23,6 +23,9 @@ public class EchoController {
     @Reference(version = "1.0.0")
     private EchoService echoService;
 
+    @Value("${server.port}")
+    private String port;
+
     @Value("${user.name}")
     private String username;
 
@@ -30,6 +33,8 @@ public class EchoController {
     public String echo(@PathVariable String string) {
         return echoService.echo(string);
     }
+
+
 
     
     @GetMapping(value = "/refresh")

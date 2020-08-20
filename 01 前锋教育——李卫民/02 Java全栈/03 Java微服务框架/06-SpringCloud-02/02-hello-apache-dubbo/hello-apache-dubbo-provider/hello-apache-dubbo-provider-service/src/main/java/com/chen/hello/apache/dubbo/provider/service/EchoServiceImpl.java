@@ -2,6 +2,7 @@ package com.chen.hello.apache.dubbo.provider.service;
 
 import com.chen.apache.dubbo.provider.api.EchoService;
 import org.apache.dubbo.config.annotation.Service;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * @Author: ChromeChen
@@ -11,8 +12,12 @@ import org.apache.dubbo.config.annotation.Service;
  */
 @Service(version = "1.0.0")
 public class EchoServiceImpl implements EchoService {
+
+    @Value("${dubbo.protocol.port}")
+    private String port;
+
     @Override
     public String echo(String s) {
-        return "『消息提供者』返回的消息为：" + s;
+        return "the port is :" + port;
     }
 }

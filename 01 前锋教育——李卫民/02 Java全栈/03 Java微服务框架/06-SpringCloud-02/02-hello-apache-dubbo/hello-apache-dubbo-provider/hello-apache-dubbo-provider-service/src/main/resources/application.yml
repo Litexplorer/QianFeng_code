@@ -9,7 +9,9 @@ dubbo:
     base-packages: com.chen.hello.apache.dubbo.provider.service
   protocol:
     name: dubbo
-    port: -1
+    port: 20880
     serialization: kryo
   registry:
     address: nacos://10.4.62.239:8848
+  provider:
+    loadbalance: roundrobin
