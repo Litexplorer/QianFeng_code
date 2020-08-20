@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+
 /**
  * @Author: ChromeChen
  * @Description:
@@ -34,7 +38,7 @@ public class EchoController {
     
     @GetMapping(value = "/refresh")
     public String refresh() {
-        return echoService.echo("consumer message is : " + username);
+        return echoService.echo("consumer message is :" + username);
     }
 
 }

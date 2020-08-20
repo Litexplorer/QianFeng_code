@@ -11,6 +11,7 @@
 
     <properties>
         <dubbo.version>2.7.2</dubbo.version>
+        <dubbo-kryo.version>2.7.２</dubbo-kryo.version>
         <dubbo-actuator.version>2.7.1</dubbo-actuator.version>
         <dubbo-registry.version>2.7.7</dubbo-registry.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
@@ -88,6 +89,17 @@
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
                 <version>2.2.1.RELEASE</version>
+            </dependency>
+
+            <!-- kryo 依赖 -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-serialization-kryo</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
             </dependency>
         </dependencies>
 
