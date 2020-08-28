@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在表单中实现数据双向绑定</title>
+</head>
+<body>
+    <div id="d0">
+        单行文本：<input type="text" v-model="message"/> &nbsp;&nbsp; 单行文本是：{{message}}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#d0", 
+            data: {
+                message: "陈奕迅"
+            }
+        })
+    </script>
+</body>
+</html>

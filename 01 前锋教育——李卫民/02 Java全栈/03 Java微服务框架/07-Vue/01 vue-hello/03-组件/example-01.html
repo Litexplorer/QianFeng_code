@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义组件</title>
+</head>
+<body>
+    <div id="d0">
+        <ul>
+            <!-- ② 这里在 for 的基础上增加了『组件绑定』，实质上就是一个映射关系：“组件的变量名称”=“父组件的变量名称” -->
+            <my-li v-for="item in items" v-bind:item_com="item"></my-li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script>
+        // 这里封装了一个组件，可以通过 my-li 来使用它
+        Vue.component("my-li", {
+            // ② 这里是定义『变量』，{{}}则是使用变量
+            props: ["item_com"],
+            template: "<li style='color : grey;'>这是自定义的组件，值为：{{item_com}}</li>"
+        })
+
+
+        var vm = new Vue({
+            // 必须指定需要绑定的 div
+            el : "#d0", 
+            data: {
+                items:["Windows", "Mac", "Linux", "Unix"]
+            }
+        })
+    </script>
+</body>
+</html>
