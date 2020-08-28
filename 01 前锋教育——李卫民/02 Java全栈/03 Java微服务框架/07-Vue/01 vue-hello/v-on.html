@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击事件语法</title>
+</head>
+<body>
+    <div id="a0">
+        <!-- ① -->
+        <button v-on:click="sayHi();">点我</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var vm = new Vue({
+            el: "#a0",
+            data: {
+                message: "这里是 on 点击后的文本！"
+            }, 
+            // ② 这里声明方法列表
+            methods: {
+                // ③ 方法的声明语法：方法名:function 关键字
+                sayHi: function() {
+                    alert(this.message);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
