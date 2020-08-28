@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if 条件</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="a0">
+        <!-- v-if 里面填写的是判断内容，一般填写变量名 -->
+        <h2 v-if="isOk">现在是 OK</h2>
+        <h1 v-else>现在是 NO</h1>
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#a0", 
+            data: {
+                isOk : true
+            }
+        })
+    </script>
+</body>
+</html>

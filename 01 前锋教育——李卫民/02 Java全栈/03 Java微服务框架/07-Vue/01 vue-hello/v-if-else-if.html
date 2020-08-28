@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if-else-if 练习</title>
+</head>
+<body>
+    <div id="a0">
+        <h1 v-if="type === 'A'">这是 A</h1>
+        <h1 v-else-if="type === 'B'">这是 B</h1>
+        <h1 v-else>其他</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#a0", 
+            data: {
+                // 注意这里不能写成 type = "A" _(:з」∠)_
+                // 其实就是 json 的语法啦
+                type: "A"
+            }
+        })
+    </script>
+</body>
+</html>
