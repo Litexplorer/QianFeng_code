@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性-demo</title>
+</head>
+<body>
+    <div id="d0">
+        <p>当前获取时间的方法：{{getCurrentTime01()}}</p>
+        <!-- 注意：调用『计算属性』的时候，不能带括号，因为其就是一个『属性』 -->
+        <p>当前获取时间的属性：{{getCurrentTime02}}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var vm = new Vue({
+            el: "#d0", 
+
+            // 这里就是使用 CPU 进行计算
+            methods: {
+                getCurrentTime01 : function() {
+                    return Date.now();
+                }
+            }, 
+            // 这里使用 CPU 计算以后，将结果保存到缓存中
+            computed: {
+                getCurrentTime02: function() {
+                    return Date.now();
+                }
+            }
+        })
+    </script>
+</body>
+</html>
