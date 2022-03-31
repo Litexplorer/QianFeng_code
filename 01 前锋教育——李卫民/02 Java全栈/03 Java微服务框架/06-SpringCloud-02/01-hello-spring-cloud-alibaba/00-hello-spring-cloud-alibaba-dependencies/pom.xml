@@ -15,7 +15,7 @@
     <properties>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <spring-cloud-alibaba.verion>2.1.0.RELEASE</spring-cloud-alibaba.verion>
-        <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
+        <spring-boot.version>2.5.12</spring-boot.version>
     </properties>
 
     <dependencyManagement>
